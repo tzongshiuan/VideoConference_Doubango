@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="rtspName"
+            type="String" />
+
+        <variable
+            name="rtspLocation"
+            type="String" />
+
+        <variable
+            name="rtspIp"
+            type="String" />
+
+        <variable
+            name="rtspDescription"
+            type="String" />
+
+        <variable
+            name="backgroundStatus"
+            type="int" />
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/rowLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        app:convertLayoutBackground="@{backgroundStatus}">
+
+        <TextView
+            android:id="@+id/titleName"
+            android:layout_width="@dimen/title_rtsp_name"
+            android:layout_height="wrap_content"
+            android:text="@{rtspName}"
+            tools:text="@string/rtsp_name"
+            android:textSize="@dimen/context_text_size" />
+
+        <View
+            android:layout_width="@dimen/title_split_width"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:background="@color/dim_gray"/>
+
+        <TextView
+            android:id="@+id/titleLocation"
+            android:layout_width="@dimen/title_rtsp_location"
+            android:layout_height="wrap_content"
+            android:text="@{rtspLocation}"
+            tools:text="@string/rtsp_location"
+            android:textSize="@dimen/context_text_size" />
+
+        <View
+            android:layout_width="@dimen/title_split_width"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:background="@color/dim_gray"/>
+
+        <TextView
+            android:id="@+id/titleIp"
+            android:layout_width="@dimen/title_rtsp_ip"
+            android:layout_height="wrap_content"
+            android:text="@{rtspIp}"
+            tools:text="@string/rtsp_ip"
+            android:textSize="@dimen/context_text_size" />
+
+        <View
+            android:layout_width="@dimen/title_split_width"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:background="@color/dim_gray"/>
+
+        <TextView
+            android:id="@+id/titleDescription"
+            android:layout_width="@dimen/title_rtsp_description"
+            android:layout_height="wrap_content"
+            android:text="@{rtspDescription}"
+            tools:text="@string/rtsp_description"
+            android:textSize="@dimen/context_text_size" />
+    </LinearLayout>
+</layout>

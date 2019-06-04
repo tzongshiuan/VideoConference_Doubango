@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:height="20dp" android:width="20dp" >
+        <shape android:shape="oval">
+            <solid android:color="#fff" />
+        </shape>
+    </item>
+    <item android:gravity="center" android:height="15dp" android:width="15dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/seek_bar_progress" />
+        </shape>
+    </item>
+</layer-list>

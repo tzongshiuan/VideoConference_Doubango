@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="secondary_video_width_dp">88dp</dimen>
+    <dimen name="secondary_video_height_dp">72dp</dimen> 
+
+    <!--about RTSP list-->
+    <dimen name="title_rtsp_name">120dp</dimen>
+    <dimen name="title_rtsp_location">120dp</dimen>
+    <dimen name="title_rtsp_ip">90dp</dimen>
+    <dimen name="title_rtsp_description">120dp</dimen>
+    <dimen name="title_split_width">1dp</dimen>
+    <dimen name="title_text_size">18sp</dimen>
+    <dimen name="context_text_size">16sp</dimen>
+
+    <!--about whiteboard-->
+    <dimen name="color_item_large">64dp</dimen>
+    <dimen name="color_item_small">48dp</dimen>
+    <dimen name="color_item_margins_large">8dp</dimen>
+    <dimen name="color_item_margins_small">4dp</dimen>
+    <dimen name="color_item_selected_check_margins">8dp</dimen>
+    <dimen name="color_preference_color_view_size">32dp</dimen>
+    <dimen name="color_preference_disabled_outline_size">2dp</dimen>
+</resources>

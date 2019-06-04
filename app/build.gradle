@@ -1,0 +1,144 @@
+import org.tmatesoft.svn.core.wc.*
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-kapt"
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.gorilla.vc"
+        minSdkVersion 23  // ideally using 23
+        //noinspection ExpiringTargetSdkVersion
+        targetSdkVersion 28  // ideally using 28
+        buildToolsVersion = '28.0.3'
+        versionCode 5
+        versionName "1.4"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    kapt {
+        generateStubs = true
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            output.outputFileName = "VC_${variant.flavorName}_v${variant.versionName}_svn${getSvnRevision()}_${buildTime()}.apk"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+//    kapt "androidx.databinding:databinding-compiler:$gradle_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:2.19.0'
+    testImplementation 'org.mockito:mockito-inline:2.19.0'
+    androidTestImplementation 'org.mockito:mockito-android:2.19.0'
+    androidTestImplementation 'android.arch.core:core-testing:1.1.1'
+
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation 'com.github.alamkanak:android-week-view:1.2.6'
+    implementation project(':android_ngn_stack')
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.3.10"
+    implementation 'com.github.bumptech.glide:glide:4.4.0'
+
+    // MessageFragment
+    implementation 'com.microsoft.signalr:signalr:1.0.0'
+
+    // Spectrum in WhiteBoardFragment
+    implementation 'org.greenrobot:eventbus:3.0.0'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+//    kapt "com.android.databinding:compiler:3.0.0"
+
+    // Fuel for RESTful API
+    implementation 'com.github.kittinunf.fuel:fuel-android:1.13.0'
+
+    // ViewModel and LiveData
+    implementation "android.arch.lifecycle:extensions:$rootProject.archVersion"
+    kapt "android.arch.lifecycle:compiler:$rootProject.archVersion"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
+//
+//    // Glide
+    implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
+
+    // Dagger
+    implementation "com.google.dagger:dagger:$rootProject.daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$rootProject.daggerVersion"
+
+//    // Gson, to prevent different gson version between libraries.
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+//
+//    // RxJava2
+    implementation "io.reactivex.rxjava2:rxjava:2.1.7"
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
+
+    //for print http log
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+
+    //tab
+    implementation 'com.android.support:design:28.0.0'
+}
+
+def getSvnRevision(){
+    ISVNOptions options = SVNWCUtil.createDefaultOptions(true)
+    SVNClientManager clientManager = SVNClientManager.newInstance(options)
+    SVNStatusClient statusClient = clientManager.getStatusClient()
+    SVNStatus status = statusClient.doStatus(projectDir, false)
+    SVNRevision revision = status.getRevision()
+    return revision.getNumber()
+}
+
+def buildTime() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMdd')
+    return formattedDate
+}
+
+task generateStrings {
+    def sw = new StringWriter()
+    def xml = new groovy.xml.MarkupBuilder(sw)
+
+    //add json values to the xml builder
+    xml.resources() {
+        string(name: "svn_revision", getSvnRevision())
+    }
+
+    def stringsFile = new File("app/src/main/res/values/svn.xml")
+    stringsFile.write(sw.toString())
+}

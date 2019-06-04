@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.ui.login.LogInActivity">
+
+    <data>
+        <variable
+            name="handler"
+            type="com.gorilla.vc.view.ui.login.LogInActivityHandler" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="45dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/accountLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/account"
+                    style="@style/LogInTextLabel"/>
+
+                <EditText
+                    android:id="@+id/accountText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/account"
+                    style="@style/LogInEditText"/>
+
+                <TextView
+                    android:id="@+id/passwordLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/password"
+                    style="@style/LogInTextLabel"/>
+
+                <EditText
+                    android:id="@+id/passwordText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+                    style="@style/LogInEditText"/>
+
+                <TextView
+                    android:id="@+id/addressLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ip_address"
+                    style="@style/LogInTextLabel"/>
+
+                <EditText
+                    android:id="@+id/addressText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/ip_address"
+                    style="@style/LogInEditText"/>
+
+                <CheckBox
+                    android:id="@+id/stunCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/enable_stun_server"
+                    style="@style/LogInCheckBox"
+                    android:visibility="gone"/>
+
+                <CheckBox
+                    android:id="@+id/avChatApartCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/av_chat_port_apart"
+                    style="@style/LogInCheckBox"
+                    android:visibility="gone"/>
+
+                <CheckBox
+                    android:id="@+id/virtualSessionCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/concall_virtual_session"
+                    style="@style/LogInCheckBox"
+                    android:visibility="gone"/>
+
+                <CheckBox
+                    android:id="@+id/qosInfoCheck"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/show_qos_info"
+                    style="@style/LogInCheckBox"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <Button
+                android:id="@+id/reserve_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/bottom_button_background"
+                android:text="@string/log_in"
+                android:textColor="@color/white"
+                android:onClick="@{handler::onLogInBtnClick}"
+                style="?android:attr/buttonBarButtonStyle"/>
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</layout>

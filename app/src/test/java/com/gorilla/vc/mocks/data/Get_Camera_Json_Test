@@ -1,0 +1,22 @@
+[
+  {
+    "channel": 1,
+    "name": "test01",
+    "description": "description01",
+    "location": "location01",
+    "url": "rtsp://192.168.11.187:8554/live/ch1?stream=0",
+    "cameraIp": "10.10.10.10",
+    "onlineTime": "00:00-00:00",
+    "repairStatus": false
+  },
+  {
+    "channel": 2,
+    "name": "test02",
+    "description": "description02",
+    "location": "location02",
+    "url": "rtsp://192.168.11.187:8554/live/ch2?stream=0",
+    "cameraIp": "10.10.10.10",
+    "onlineTime": "00:00-00:00",
+    "repairStatus": false
+  }
+]

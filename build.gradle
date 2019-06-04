@@ -1,0 +1,61 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.gradle_version = '3.2.0'
+    ext.kotlin_version = '1.3.10'
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // about subversion
+        classpath group: 'org.tmatesoft.svnkit', name: 'svnkit', version: '1.8.11'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+ext {
+    // Sdk and tools
+    minSdkVersion = 19
+    targetSdkVersion = 21
+    compileSdkVersion = 27
+
+    // App dependencies
+    espressoVersion = '3.0.1'
+    junitVersion = '4.12'
+    testRunnerVersion = '1.0.1'
+    mockServerVersion = '3.8.1'
+    mockitoVersion = '2.13.0'
+    supportLibraryVersion = '27.1.1'
+    constraintLayoutVersion = '1.0.2'
+    archVersion = '1.1.1'
+    retrofitVersion = '2.3.0'
+    gsonVersion = '2.8.2'
+    glideVersion = '4.4.0'
+    stethoVersion = '1.5.0'
+    timberVersion = '4.5.1'
+    rxAndroidVersion = '2.0.1'
+    rxJavaVersion = '2.1.7'
+    daggerVersion = '2.14.1'
+    crashlyticsVersion = '2.7.1@aar'
+//    firebaseVersion = '11.8.0'
+    firebaseVersion = '16.0.1'
+    firebaseMessageVersion = '17.1.0'
+    googleServiceVersion = '15.0.1'
+}

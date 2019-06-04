@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="session"
+            type="com.gorilla.vc.model.OnGoingVcSession" />
+
+        <variable
+            name="time"
+            type="String" />
+
+        <variable
+            name="timeUnit"
+            type="String" />
+
+        <variable
+            name="people"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@{session.name}"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@{@string/host_name(session.hostName)}"
+                            android:textColor="@color/text_gray"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <include
+                        layout="@layout/start_time_online_count_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:people="@{people}"
+                        app:time="@{time}"
+                        app:timeUnit="@{timeUnit}" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/divider_gray" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="20dp"
+            android:paddingBottom="10dp">
+
+            <Button
+                android:id="@+id/enterBtn"
+                android:layout_width="65dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_enter"
+                android:text="@string/enter"
+                android:textColor="@color/switch_btn_on"
+                android:textSize="16sp"
+                android:clickable="true"
+                app:pressDrawable="@{@drawable/ic_enter_release}"
+                app:pressTextColor="@{@color/red}"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

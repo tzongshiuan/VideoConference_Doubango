@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--customized recycler view-->
+    <declare-styleable name="StyledRecyclerView">
+        <attr name="rvDividerDrawable" format="reference" />
+        <attr name="rvDividerMode">
+            <flag name="none" value="0" />
+            <flag name="beginning" value="1" />
+            <flag name="middle" value="2" />
+            <flag name="end" value="4" />
+        </attr>
+    </declare-styleable>
+
+    <!--Attributes in LogInActivity-->
+    <string-array name="transport_array">
+        <item>UDP</item>
+        <item>TCP</item>
+        <item>TLS</item>
+    </string-array>
+
+    <string-array name="proxy_discovery_array">
+        <item>None</item>
+        <item>DNS NAPTR+SRV</item>
+    </string-array>
+
+    <!--Attributes in WhiteBoardFragment-->
+    <attr name="spectrum_colors" format="reference" />
+    <attr name="spectrum_outlineWidth" format="dimension" />
+    <attr name="spectrum_columnCount" format="integer" />
+
+    <declare-styleable name="SpectrumPalette">
+        <attr name="spectrum_colors" />
+        <attr name="spectrum_outlineWidth" />
+        <attr name="spectrum_columnCount" />
+        <attr name="spectrum_autoPadding" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="SpectrumPreference">
+        <attr name="spectrum_colors" />
+        <attr name="spectrum_outlineWidth" />
+        <attr name="spectrum_columnCount" />
+        <attr name="spectrum_closeOnSelected" format="boolean" />
+    </declare-styleable>
+</resources>

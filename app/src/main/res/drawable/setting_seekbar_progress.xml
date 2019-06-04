@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@android:id/background">
+        <!--background-->
+        <shape android:shape="rectangle" >
+            <solid
+                android:color="@color/seek_bar_background" />
+        </shape>
+    </item>
+    <item android:id="@android:id/progress">
+        <!--progress color-->
+        <clip>
+            <shape android:shape="rectangle" >
+                <solid
+                    android:color="@color/bottom_button_background" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

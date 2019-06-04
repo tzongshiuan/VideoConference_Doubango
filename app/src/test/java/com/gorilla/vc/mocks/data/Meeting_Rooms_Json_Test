@@ -1,0 +1,72 @@
+[
+  {
+    "id": 18001,
+    "name": "VC_ANDROID_20181123",
+    "password": "default",
+    "startDate": "2018-11-23T11:00:00+08:00",
+    "endDate": "2018-11-23T23:00:00+08:00",
+    "hostParticipantId": 11751,
+    "creatorParticipantId": 11751,
+    "recordDefault": 0,
+    "hasRecord": 0,
+    "agenda": "VC_ANDROID_20181123",
+    "status": 1,
+    "createDate": "2018-11-23T10:49:27.337+08:00",
+    "sip": {
+      "id": 1001,
+      "proxyIp": "192.168.11.26",
+      "proxyPort": "20080",
+      "videoCodecs": "H.263",
+      "audioCodecs": "mp3"
+    },
+    "meetingRoomMapParticipants": [
+      {
+        "id": 16301,
+        "isOnline": 0
+      },
+      {
+        "id": 16302,
+        "isOnline": 1
+      },
+      {
+        "id": 16303,
+        "isOnline": 0
+      }
+    ]
+  },
+  {
+    "id": 18002,
+    "name": "VC_ANDROID_20181124",
+    "password": "default",
+    "startDate": "2018-11-24T11:00:00+08:00",
+    "endDate": "2018-11-24T23:00:00+08:00",
+    "hostParticipantId": 11751,
+    "creatorParticipantId": 11751,
+    "recordDefault": 0,
+    "hasRecord": 0,
+    "agenda": "VC_ANDROID_20181124",
+    "status": 1,
+    "createDate": "2018-11-24T10:49:27.337+08:00",
+    "sip": {
+      "id": 1001,
+      "proxyIp": "192.168.11.26",
+      "proxyPort": "20080",
+      "videoCodecs": "H.263",
+      "audioCodecs": "mp3"
+    },
+    "meetingRoomMapParticipants": [
+      {
+        "id": 17301,
+        "isOnline": 0
+      },
+      {
+        "id": 17302,
+        "isOnline": 1
+      },
+      {
+        "id": 17303,
+        "isOnline": 0
+      }
+    ]
+  }
+]

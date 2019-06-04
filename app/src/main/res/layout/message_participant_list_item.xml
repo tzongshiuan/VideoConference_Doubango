@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="backgroundStatus"
+            type="int" />
+
+        <variable
+            name="onlineStatus"
+            type="int" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/rowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:convertLayoutBackground="@{backgroundStatus}"
+        tools:background="@color/activity_background">
+
+        <ImageView
+            android:id="@+id/statusImage"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:convertOnlineStatus="@{onlineStatus}"
+            tools:src="@mipmap/ic_online" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:text="@{name}"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/statusImage"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Hsuan" />
+
+        <View
+            android:id="@+id/split"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintTop_toBottomOf="@+id/text"
+            android:layout_marginTop="4dp"
+            android:background="@color/dim_gray" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

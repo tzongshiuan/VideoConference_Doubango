@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        
+        <variable
+            name="time"
+            type="String"/>
+        
+        <variable
+            name="timeUnit"
+            type="String"/>
+        
+        <variable
+            name="people"
+            type="String"/>
+        
+    </data>
+    
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/left_tag_bg"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/started"
+                android:textSize="16sp"
+                android:textColor="@color/text_gray"/>
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{time}"
+                android:textSize="16sp"
+                android:textColor="@color/text_gray"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{timeUnit}"
+                android:textSize="16sp"
+                android:textColor="@color/text_gray"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/text_gray" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/right_tag_bg"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{people}"
+                android:textSize="16sp"
+                android:textColor="@color/text_gray"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/people_online"
+                android:textSize="16sp"
+                android:textColor="@color/text_gray"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

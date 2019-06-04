@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <com.gorilla.vc.view.customized.StyledRecyclerView
+        android:id="@+id/memberList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:rvDividerDrawable="@drawable/row_item_divider"
+        app:rvDividerMode="middle|end"
+        tools:listitem="@layout/member_list_item" />
+
+</layout>

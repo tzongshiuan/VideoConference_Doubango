@@ -1,0 +1,24 @@
+{
+  "id": 11751,
+  "name": "hsuan",
+  "password": "default",
+  "emailAddress": "tsunghsuanlai@gorilla-technology.com",
+  "selfieImageLocation": "defaultImg",
+  "isValid": 1,
+  "createDate": "2018-12-14T16:41:30.492+08:00",
+  "memberId": "A11041300F-9131436f-aca0-4ce3-a16b-d48d5d368a3e",
+  "meetingRoomMapParticipants": [
+    {
+      "id": 16301,
+      "isOnline": 0
+    },
+    {
+      "id": 17301,
+      "isOnline": 0
+    }
+  ],
+  "roleId": 10002,
+  "rank": null,
+  "duties": null,
+  "unit": null
+}

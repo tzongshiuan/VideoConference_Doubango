@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.ui.concall.ConcallActivity">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.gorilla.vc.view.ui.concall.ConcallActivityHandler" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/concallMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/remoteVideoFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="216dp"
+            android:background="@color/black" />
+
+        <RelativeLayout
+            android:id="@+id/controlPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <!--Use ImageView to instead of ToggleButton here for better UX -->
+            <ImageView
+                android:id="@+id/speakingBtn"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="72dp"
+                android:background="@drawable/btn_speaking"
+                android:onClick="@{handler::onSpeakingBtnClick}" />
+
+            <ImageView
+                android:id="@+id/whiteboardBtn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="72dp"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/speakingBtn"
+                android:background="@drawable/btn_whiteboard"
+                android:onClick="@{handler::onWhiteboardBtnClick}" />
+
+            <ImageView
+                android:id="@+id/screenSharingBtn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="72dp"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/whiteboardBtn"
+                android:background="@drawable/btn_screen_sharing"
+                android:onClick="@{handler::onScreenCastBtnClick}" />
+
+            <ImageView
+                android:id="@+id/cameraBtn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="72dp"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/screenSharingBtn"
+                android:background="@drawable/btn_camera"
+                android:onClick="@{handler::onCameraBtnClick}" />
+
+            <ImageView
+                android:id="@+id/leaveBtn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="72dp"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/cameraBtn"
+                android:background="@drawable/btn_leave"
+                android:onClick="@{handler::onLeaveBtnClick}" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textViewQoS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:background="@color/transparent"
+            android:text="QoS"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <HorizontalScrollView
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/secondary_video_height_dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/remoteVideoFrameLayout"
+            android:background="@color/dim_gray">
+
+            <FrameLayout
+                android:id="@+id/remoteSndVideoFrameLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout1">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/NotitleActionBar">
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tabGravity="fill"
+                    app:tabTextColor="@color/black"
+                    android:background="@color/white"
+                    app:tabIndicatorColor="@color/bottom_button_background"
+                    app:tabMode="fixed" />
+            </android.support.design.widget.AppBarLayout>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/settingBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:onClick="@{handler::onSettingBtnClick}"
+            android:padding="5dp"
+            android:src="@mipmap/btn_setting_n"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/localVideoFrameLayout"
+            android:layout_width="94dp"
+            android:layout_height="94dp"
+            android:layout_margin="4dp"
+            android:background="@color/dim_gray"
+            android:minWidth="90dp"
+            android:minHeight="90dp"
+            android:padding="4dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/localSndVideoFrameLayout"
+            android:layout_width="94dp"
+            android:layout_height="94dp"
+            android:layout_margin="4dp"
+            android:background="@color/dim_gray"
+            android:minWidth="90dp"
+            android:minHeight="90dp"
+            android:padding="4dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.example.shawnwang.searchtest.WaitingProgress
+            android:id="@+id/progress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

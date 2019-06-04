@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="isVideoActive"
+            type="boolean" />
+
+        <variable
+            name="isHostActive"
+            type="boolean" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="isEnableVideo"
+            type="boolean" />
+
+        <variable
+            name="isEnableAudio"
+            type="boolean" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/activity_background">
+
+        <ImageView
+            android:id="@+id/videoBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:convertVideo="@{isVideoActive}"
+            tools:src="@drawable/btn_video"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="5dp"/>
+
+        <ImageView
+            android:id="@+id/hostBtn"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:convertHost="@{isHostActive}"
+            tools:src="@drawable/btn_hammer"
+            android:padding="10dp"
+            app:layout_constraintStart_toEndOf="@+id/videoBtn" />
+
+        <ImageView
+            android:id="@+id/userImg"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@mipmap/ic_user1_n"
+            android:padding="5dp"
+            app:layout_constraintStart_toEndOf="@+id/hostBtn" />
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/userVideo"
+            app:layout_constraintStart_toEndOf="@+id/userImg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="16sp"
+            android:text="@{name}"
+            tools:text="User"/>
+
+        <ImageView
+            android:id="@+id/userVideo"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:convertUserVideoSrc="@{isEnableVideo}"
+            tools:src="@mipmap/ic_video_n"
+            android:padding="5dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/userName" />
+
+        <ImageView
+            android:id="@+id/userAudio"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            app:convertUserAudioSrc="@{isEnableAudio}"
+            tools:src="@mipmap/ic_mic_n"
+            android:padding="5dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/userVideo"
+            app:layout_constraintEnd_toStartOf="@+id/userChat"/>
+
+        <ImageView
+            android:id="@+id/userChat"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@mipmap/ic_chat_n"
+            android:padding="5dp"
+            android:layout_marginEnd="3dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/userAudio"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </android.support.constraint.ConstraintLayout>
+</layout>

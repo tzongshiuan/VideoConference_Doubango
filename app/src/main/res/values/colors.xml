@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5E6FD9</color>
+    <color name="colorPrimaryDark">#233295</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!--Common colors-->
+    <color name="black">#000000</color>
+    <color name="holo_dark">#3C3C3D</color>
+    <color name="red">#FF0000</color>
+    <color name="blue">#0000FF</color>
+    <color name="steel_blue">#5CACEE</color>
+    <color name="deep_sky_blue">#009ACD</color>
+    <color name="aqua">#00FFFF</color>
+    <color name="navy">#000080</color>
+    <color name="gray">#D3D3D3</color>
+    <color name="dim_gray">#696969</color>
+    <color name="maroon">#800000</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="olive">#808000</color>
+    <color name="lime">#00FF00</color>
+    <color name="green">#008000</color>
+    <color name="teal">#008080</color>
+    <color name="fuchsia">#FF00FF</color>
+    <color name="purple">#800080</color>
+    <color name="orange">#ED9121</color>
+    <color name="indigo">#3F47CC</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="trans_white">#00FFFFFF</color>
+
+    <color name="list_item_title">#fff</color>
+    <color name="list_background">#303030</color>
+    <color name="list_background_pressed">#992416</color>
+    <color name="list_divider">#272727</color>
+
+    <color name="bottom_button_background">#5E6FD9</color>
+
+    <color name="activity_background">#E2E2E2</color>
+
+    <!--SeekBar-->
+    <color name="seek_bar_progress">#5E6FD9</color>
+    <color name="seek_bar_background">#C0DAF0</color>
+
+    <!--Switch Button-->
+    <color name="switch_btn_on">#5E6FD9</color>
+    <color name="switch_btn_off">#696969</color>
+
+    <color name="text_gray">#515151</color>
+    <color name="divider_gray">#424242</color>
+
+    <color name="window_default_background">#E2E2E2</color>
+
+    <color name="time_tag">#FFCFCFCF</color>
+
+
+    <color name="waiting_progress_bg_t">#DFB8B8B8</color>
+    <color name="waiting_progress_bg">#FFB8B8B8</color>
+
+    <color name="waiting_progress_text">#FF6E6E6E</color>
+    <color name="waiting_progress">#009688</color>
+
+    <color name="message_editor_bg_stroke">#9B9B9B</color>
+    <color name="message_editor_bg_solid">#D9D9D9</color>
+
+    <color name="divider_info">#929292</color>
+
+    <color name="message_unread">#FAFACC</color>
+</resources>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.ui.login.SettingActivity">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="volNumber"
+            type="java.lang.String" />
+
+        <variable
+            name="maxVolume"
+            type="java.lang.String" />
+
+        <variable
+            name="isVolumeChecked"
+            type="boolean" />
+
+        <variable
+            name="isMicChecked"
+            type="boolean" />
+
+        <variable
+            name="isCameraChecked"
+            type="boolean" />
+
+        <variable
+            name="handler"
+            type="com.gorilla.vc.view.ui.setting.SettingActivityHandler" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/activity_background">
+
+        <include
+            android:id="@+id/titleTextView"
+            layout="@layout/title_layout"
+            app:title="@{@string/setting}"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <RelativeLayout
+            android:id="@+id/layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView">
+
+            <ImageView
+                android:id="@+id/volumeImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_volume_n"
+                style="@style/SettingImageView" />
+
+            <TextView
+                android:id="@+id/volumeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/volumeImg"
+                android:layout_toStartOf="@id/volumeSwitch"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:text="@{String.format(@string/my_volume, volNumber, maxVolume)}"
+                style="@style/SettingSeekBar" />
+
+            <!--<SeekBar-->
+                <!--android:id="@+id/volumeSeekBar"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_toEndOf="@+id/volumeImg"-->
+                <!--android:layout_toStartOf="@id/volumeSwitch"-->
+                <!--android:layout_marginStart="5dp"-->
+                <!--android:layout_marginEnd="5dp"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:max="100"-->
+                <!--android:maxHeight="6dp"-->
+                <!--android:maxWidth="6dp"-->
+                <!--android:onProgressChanged="@{handler::onVolumeValueChanged}"-->
+                <!--style="@style/SettingSeekBar" />-->
+
+            <Switch
+                android:id="@+id/volumeSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="15dp"
+                android:layout_centerInParent="true"
+                android:checked="@={isVolumeChecked}"
+                android:onClick="@{handler::onVolumeSwitchClick}"
+                style="@style/SettingSwitchBtn" />
+
+            <TextView
+                android:id="@+id/volumeSwitchOnText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/volumeSwitch"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:text="@string/switch_on"
+                android:visibility="@{isVolumeChecked ? View.VISIBLE : View.GONE}"
+                style="@style/SettingSwitchText" />
+
+            <TextView
+                android:id="@+id/volumeSwitchOffText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/volumeSwitch"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="13dp"
+                android:text="@string/switch_off"
+                android:visibility="@{isVolumeChecked ? View.GONE : View.VISIBLE}"
+                style="@style/SettingSwitchText" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintTop_toBottomOf="@id/layout1">
+
+            <ImageView
+                android:id="@+id/micImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_mic_n"
+                style="@style/SettingImageView" />
+
+            <TextView
+                android:id="@+id/micText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/micImg"
+                android:layout_toStartOf="@id/micSwitch"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:text="@string/my_mic"
+                style="@style/SettingSeekBar" />
+
+            <!--<SeekBar-->
+                <!--android:id="@+id/micSeekBar"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_toEndOf="@+id/micImg"-->
+                <!--android:layout_toStartOf="@id/micSwitch"-->
+                <!--android:layout_marginStart="5dp"-->
+                <!--android:layout_marginEnd="5dp"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:max="100"-->
+                <!--android:maxHeight="6dp"-->
+                <!--android:maxWidth="6dp"-->
+                <!--style="@style/SettingSeekBar" />-->
+
+            <Switch
+                android:id="@+id/micSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="15dp"
+                android:layout_centerInParent="true"
+                android:checked="@={isMicChecked}"
+                android:onClick="@{handler::onMicSwitchClick}"
+                style="@style/SettingSwitchBtn" />
+
+            <TextView
+                android:id="@+id/micSwitchOnText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/micSwitch"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:text="@string/switch_on"
+                android:visibility="@{isMicChecked ? View.VISIBLE : View.GONE}"
+                style="@style/SettingSwitchText" />
+
+            <TextView
+                android:id="@+id/micSwitchOffText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/micSwitch"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="13dp"
+                android:text="@string/switch_off"
+                android:visibility="@{isMicChecked ? View.GONE : View.VISIBLE}"
+                style="@style/SettingSwitchText" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/layout2">
+
+            <ImageView
+                android:id="@+id/cameraImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_video_n"
+                style="@style/SettingImageView" />
+
+            <TextView
+                android:id="@+id/cameraText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/cameraImg"
+                android:layout_toStartOf="@id/cameraSwitch"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:text="@string/my_camera"
+                style="@style/SettingSeekBar" />
+
+            <Switch
+                android:id="@+id/cameraSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="15dp"
+                android:layout_centerInParent="true"
+                android:checked="@={isCameraChecked}"
+                android:onClick="@{handler::onCameraSwitchClick}"
+                style="@style/SettingSwitchBtn" />
+
+            <TextView
+                android:id="@+id/cameraSwitchOnText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/cameraSwitch"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="12dp"
+                android:text="@string/switch_on"
+                android:visibility="@{isCameraChecked ? View.VISIBLE : View.GONE}"
+                style="@style/SettingSwitchText" />
+
+            <TextView
+                android:id="@+id/cameraSwitchOffText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/cameraSwitch"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="13dp"
+                android:text="@string/switch_off"
+                android:visibility="@{isCameraChecked ? View.GONE : View.VISIBLE}"
+                style="@style/SettingSwitchText" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/cameraPreview"
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+            app:layout_constraintTop_toBottomOf="@+id/layout3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="15dp"
+            android:background="@color/activity_background">
+
+            <ImageView
+                android:id="@+id/cameraView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:rotation="-90" />
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/confirmBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/bottom_button_background"
+            android:text="@string/confirm"
+            android:textColor="@color/white"
+            android:onClick="@{() -> handler.onConfirmBtnClick()}"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="secondary_video_width">88</integer>
+    <integer name="secondary_video_height">72</integer>
+    <integer name="anim_duration_medium">200</integer>
+</resources>

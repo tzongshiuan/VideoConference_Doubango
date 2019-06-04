@@ -1,0 +1,127 @@
+<resources>
+    <string name="app_name">VC</string>
+
+    <!--about LogInActivity-->
+    <string name="account">Account</string>
+    <string name="password">Password</string>
+    <string name="ip_address">IP Address</string>
+    <string name="log_in">Log In</string>
+    <string name="log_in_fail">Log in failed</string>
+    <string name="account_empty">Account could not be empty.</string>
+    <string name="password_empty">Password could not be empty.</string>
+    <string name="address_empty">Address could not be empty.</string>
+    <string name="enable_stun_server">Enable STUN server</string>
+    <string name="av_chat_port_apart">Set AV and Chat sessions apart</string>
+    <string name="concall_virtual_session">Concall with fake session</string>
+    <string name="show_qos_info">Show QOS information in Concall page</string>
+
+    <!--about SessionActivity-->
+    <string name="reserve_session">Reserved Session</string>
+    <string name="ongoing_session">OnGoing Session</string>
+    <string name="enter_session_fail">Enter session failed</string>
+    <string name="wrong_server_info">Wrong server information to register</string>
+    <string name="have_not_register">Haven\'t registered"</string>
+    <string name="have_empty_sid">Have empty session ID</string>
+    <string name="normal_url_fail">Failed to normalize sip url</string>
+    <string name="alert_logout_message">Are you sure you want to logout?\n</string>
+    <string name="alert_logout_title">Confirm Logout</string>
+    <string name="alert_permission_message">Continue to user after allow all the permissions.</string>
+    <string name="alert_permission_title">Confirm Permissions</string>
+
+    <!--about SettingActivity-->
+    <string name="confirm">Confirm</string>
+    <string name="switch_on">On</string>
+    <string name="switch_off">Off</string>
+    <string name="my_volume">Volume: %1$s, Max: %2$s</string>
+    <string name="my_mic">My Microphone</string>
+    <string name="my_camera">My Camera</string>
+
+    <!--about ConcallActivity-->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="put_center">Center</string>
+    <string name="put_left">Left</string>
+    <string name="put_right">Right</string>
+    <string name="interrupt">Interrupt</string>
+    <string name="exit">Exit</string>
+    <string name="cont">Continue</string>
+    <string name="alert_exit_message">Are you sure you want to exit from this session?\n</string>
+    <string name="alert_exit_title">Confirm Exit</string>
+    <string name="alert_change_host">Set up %1$s as host? </string>
+    <string name="alert_change_title">Confirm Change</string>
+    <string name="already_two_speakers">There are already have two speakers.</string>
+    <string name="hint_change_speaker">Only host account could change speaking member(s)</string>
+    <string name="hint_change_host">Only host account could designate someone as host</string>
+    <string name="hint_change_video_status">Only host account could enable/disable user\'s video.</string>
+    <string name="hint_change_audio_status">Only host account could enable/disable user\'s audio.</string>
+    <string name="hint_host_leave">Please assign the other participant as host before you leave.</string>
+    <string name="hint_terminate">This session had been terminated because of something getting wrong.</string>
+    <string name="message">Message</string>
+    <string name="send_to_everyone">Send to everyone</string>
+    <string name="user_online">%1$s has been online</string>
+    <string name="user_offline">%1$s has been offline</string>
+    <string name="already_camera_source">The current setting is already sending video source from camera</string>
+    <string name="already_screen_source">The current setting is already sending video source from screen</string>
+
+    <!--about RTSP list-->
+    <string name="rtsp_list">RTSP List</string>
+    <string name="rtsp_name">Name</string>
+    <string name="rtsp_location">Location</string>
+    <string name="rtsp_ip">IP</string>
+    <string name="rtsp_description">Description</string>
+    <string name="alert_rtsp_invalid_message">Can not use this RTSP. Please contact to administrator.</string>
+    <string name="alert_rtsp_disconnect_message">RTSP(%1$s) has been disconnection. Please contact to administrator.</string>
+    <string name="alert_rtsp_title">Confirm RTSP</string>
+
+    <!--about Whiteboard-->
+    <string name="whiteboard">Whiteboard</string>
+    <string name="save_canvas_path">Saving whiteboard into device path: %1$s</string>
+    <string name="save_canvas_fail">Save canvas failed!</string>
+    <string name="no_more_history">No more history</string>
+    <string name="confirm_save">Confirm Canvas Save</string>
+    <string name="save_canvas_message">Do you want to save the canvas?</string>
+    <string name="confirm_clear">Confirm Clear</string>
+    <string name="clear_canvas_message">Are you sure you want to erase the canvas?</string>
+    <string name="select_color">Select a Color</string>
+
+    <!--about RecyclerView-->
+    <string name="session_date_format">yyyy/MM/dd HH:mm</string>
+    <string name="session_name">Session Name: </string>
+    <string name="session_date">Session Date: </string>
+    <string name="host_name">Host: %1$s</string>
+
+    <!--title-->
+    <string name="title_vc">Video Conference</string>
+
+    <string name="hint_search">keyword search</string>
+
+    <string name="started">started </string>
+    <string name="people_online"> online</string>
+
+    <string name="years"> years</string>
+    <string name="months"> months</string>
+    <string name="days"> days</string>
+    <string name="hours"> hours</string>
+    <string name="minutes"> minutes</string>
+
+    <string name="enter">Enter</string>
+    <string name="waiting">Loading...</string>
+
+    <string name="message_hint">input message</string>
+    <string name="tab_information">Information</string>
+    <string name="tab_member">Member</string>
+    <string name="tab_message">Message</string>
+
+    <string name="disable_message">Disable Message</string>
+    <string name="setting">Setting</string>
+
+    <string name="info_host">Host: %1$s</string>
+    <string name="info_presenter">Presenter: %1$s</string>
+    <string name="info_people">People: %1$s</string>
+
+    <string name="network_no_network">No network</string>
+    <string name="network_server_error">Server error</string>
+
+    <string name="network_retry">Retry</string>
+
+</resources>

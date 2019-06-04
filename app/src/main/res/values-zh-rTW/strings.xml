@@ -1,0 +1,126 @@
+<resources>
+    <string name="app_name">VC</string>
+
+    <!--about LogInActivity-->
+    <string name="account">帳號</string>
+    <string name="password">密碼</string>
+    <string name="ip_address">IP Address</string>
+    <string name="log_in">登入</string>
+    <string name="log_in_fail">登入失敗</string>
+    <string name="account_empty">帳號不能為空</string>
+    <string name="password_empty">密碼不能為空</string>
+    <string name="address_empty">位址不能為空</string>
+    <string name="enable_stun_server">啟用STUN server</string>
+    <string name="av_chat_port_apart">Set AV and Chat sessions apart</string>
+    <string name="concall_virtual_session">Concall with fake session</string>
+    <string name="show_qos_info">Show QOS information in Concall page</string>
+
+    <!--about SessionActivity-->
+    <string name="reserve_session">預約中會議</string>
+    <string name="ongoing_session">進行中會議</string>
+    <string name="enter_session_fail">進入會議失敗</string>
+    <string name="wrong_server_info">錯誤的註冊資訊</string>
+    <string name="have_not_register">尚未註冊</string>
+    <string name="have_empty_sid">會議ID為空</string>
+    <string name="normal_url_fail">正規化SIP url失敗</string>
+    <string name="alert_logout_message">是否確定要登出?\n</string>
+    <string name="alert_logout_title">確認登出</string>
+    <string name="alert_permission_message">允許所有權限後才可以繼續使用</string>
+    <string name="alert_permission_title">確認權限</string>
+
+    <!--about SettingActivity-->
+    <string name="confirm">確定</string>
+    <string name="switch_on">On</string>
+    <string name="switch_off">Off</string>
+    <string name="my_volume">音量: %1$s, 最大值: %2$s</string>
+    <string name="my_mic">我的麥克風</string>
+    <string name="my_camera">我的攝影機</string>
+
+    <!--about ConcallActivity-->
+    <string name="ok">確認</string>
+    <string name="cancel">取消</string>
+    <string name="put_center">置中</string>
+    <string name="put_left">置左</string>
+    <string name="put_right">置右</string>
+    <string name="interrupt">中斷</string>
+    <string name="exit">離開</string>
+    <string name="cont">繼續</string>
+    <string name="alert_exit_message">是否確定要離開此會議?\n</string>
+    <string name="alert_exit_title">確認離開</string>
+    <string name="alert_change_host">設置%1$s為主持人? </string>
+    <string name="alert_change_title">確認變更</string>
+    <string name="already_two_speakers">已存在兩位講者</string>
+    <string name="hint_change_speaker">只有主持人可以改變講者</string>
+    <string name="hint_change_host">只有主持人可以指派主持人</string>
+    <string name="hint_change_video_status">只有主持人可以啟用或是禁用使用者上傳畫面資訊</string>
+    <string name="hint_change_audio_status">只有主持人可以啟用或是禁用使用者上傳聲音資訊</string>
+    <string name="hint_host_leave">在您離開前，請指定其他與會者為主持人。</string>
+    <string name="hint_terminate">發生例外，此會議已經終止</string>
+    <string name="message">訊息</string>
+    <string name="send_to_everyone">發送給所有人</string>
+    <string name="user_online">%1$s已上線</string>
+    <string name="user_offline">%1$s已離線</string>
+    <string name="already_camera_source">影像來源已設定為攝影機</string>
+    <string name="already_screen_source">影像來源已設定為屏幕</string>
+
+    <!--about RTSP list-->
+    <string name="rtsp_list">RTSP列表</string>
+    <string name="rtsp_name">名稱</string>
+    <string name="rtsp_location">區域</string>
+    <string name="rtsp_ip">IP</string>
+    <string name="rtsp_description">敘述</string>
+    <string name="alert_rtsp_invalid_message">無法使用此RTSP，請聯絡管理者。</string>
+    <string name="alert_rtsp_disconnect_message">RTSP(%1$s)已斷線，請聯絡管理者。</string>
+    <string name="alert_rtsp_title">確認RTSP</string>
+
+    <!--about Whiteboard-->
+    <string name="whiteboard">白板</string>
+    <string name="save_canvas_path">存取白板至裝置路徑: %1$s</string>
+    <string name="save_canvas_fail">儲存白板失敗!</string>
+    <string name="no_more_history">沒有更多的歷史紀錄</string>
+    <string name="confirm_save">確認白板儲存</string>
+    <string name="save_canvas_message">是否確定要儲存白板內容?</string>
+    <string name="confirm_clear">確認清除</string>
+    <string name="clear_canvas_message">是否確定要清除白板內容?</string>
+    <string name="select_color">選擇一個顏色</string>
+
+    <!--about RecyclerView-->
+    <string name="session_date_format">yyyy\'年\'MM\'月\'dd\'日\' HH:mm</string>
+    <string name="session_name">會議名稱：</string>
+    <string name="session_date">會議日期：</string>
+    <string name="host_name">主持人：%1$s</string>
+    
+    <!--title-->
+    <string name="title_vc">視訊會議</string>
+
+    <string name="hint_search">關鍵字搜尋</string>
+    <string name="started">已開始</string>
+    <string name="people_online">人正在線上</string>
+
+    <string name="years">年</string>
+    <string name="months">月</string>
+    <string name="days">天</string>
+    <string name="hours">時</string>
+    <string name="minutes">分</string>
+
+    <string name="enter">進入</string>
+    <string name="waiting">Loading...</string>
+
+    <string name="message_hint">輸入訊息</string>
+
+
+    <string name="tab_information">資訊</string>
+    <string name="tab_member">成員</string>
+    <string name="tab_message">訊息</string>
+
+    <string name="disable_message">未開放訊息功能</string>
+    <string name="setting">設定</string>
+    <string name="info_host">主持人：%1$s</string>
+    <string name="info_presenter">主講人：%1$s</string>
+    <string name="info_people">成員：%1$s</string>
+
+    <string name="network_no_network">無網路連線</string>
+    <string name="network_server_error">伺服器錯誤</string>
+    <string name="network_retry">重試</string>
+
+</resources>

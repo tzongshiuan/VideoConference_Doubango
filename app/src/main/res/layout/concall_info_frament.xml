@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="host"
+            type="String"/>
+
+        <variable
+            name="presenter"
+            type="String"/>
+
+        <variable
+            name="session"
+            type="com.gorilla.vc.model.OnGoingVcSession"/>
+
+        <variable
+            name="people"
+            type="String"/>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="@{session.name}"/>
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider_info"/>
+
+        <TextView
+            style="@style/ConcallInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:convertDateOnly="@{session.startDate}"/>
+        <TextView
+            style="@style/ConcallInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/info_host(host)}"/>
+        <TextView
+            style="@style/ConcallInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/info_presenter(presenter)}"/>
+        <TextView
+            style="@style/ConcallInfoText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/info_people(people)}"/>
+
+    </LinearLayout>
+
+</layout>

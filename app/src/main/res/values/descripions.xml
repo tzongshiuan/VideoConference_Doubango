@@ -1,0 +1,8 @@
+<resources>
+    <string name="pencil_btn_description" translatable="false">pencil button</string>
+    <string name="eraser_btn_description" translatable="false">eraser button</string>
+    <string name="color_btn_description" translatable="false">color button</string>
+    <string name="save_btn_description" translatable="false">save button</string>
+    <string name="undo_btn_description" translatable="false">undo button</string>
+    <string name="trash_can_btn_description" translatable="false">trash can button</string>
+</resources>

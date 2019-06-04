@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+        <import type="com.gorilla.vc.model.Status"/>
+        <import type="com.gorilla.vc.utils.apiLiveData.ApiLiveData"/>
+        <variable
+            name="apiLiveData"
+            type="com.gorilla.vc.utils.apiLiveData.ApiLiveData&lt;Object>"/>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="@{apiLiveData.currentStatus.status == Status.FAILED? View.VISIBLE : View.GONE}">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_error_black_24dp"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{apiLiveData.currentStatus.msgRes}"
+            android:textColor="@color/dim_gray"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/network_retry"
+            app:retryStatus="@{apiLiveData}"/>
+    </LinearLayout>
+
+</layout>
